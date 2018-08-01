@@ -4,6 +4,8 @@ node{
     git'https://github.com/EereshMS/SpringBootApp'
   }
   stage('Compile-Package'){
-     sh 'mvn package'
+    def mavenHome = tool name: 'maven', type:'maven' 
+    
+    sh "${mavenHome}/bin/ mvn package"
   }
 }
